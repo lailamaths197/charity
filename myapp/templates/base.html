@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}HopeHands Foundation{% endblock %}</title>
+    <!-- Main Style Sheet Linking -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- FontAwesome icon kits can be appended here for social links -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+    <!-- REUSABLE NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">■ HopeHands Foundation</div>
+            <ul class="nav-links">
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/about/">About Us</a></li>
+                <li><a href="/causes/">Causes</a></li>
+                <li><a href="/donate/">Donate</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+            <a href="/donate/" class="btn-donate-nav">Donate Now</a>
+        </div>
+    </header>
+
+    <!-- MAIN DYNAMIC CONTENT HOLDER -->
+    <main>
+        {% block content %}
+        <!-- Child templates inject their unique blocks here -->
+        {% endblock %}
+    </main>
+
+    <!-- REUSABLE FOOTER -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/about/">About Us</a>
+            <a href="/causes/">Our Programs</a>
+            <a href="/volunteer/">Volunteer</a>
+            <a href="/donate/">Donate</a>
+            <a href="/contact/">Contact</a>
+        </div>
+        <div class="footer-socials">
+            <!-- Placeholders for icons matching mockup layouts -->
+            <span>🌐</span> <span>🐦</span> <span>📸</span> <span>💼</span>
+        </div>
+        <p class="copyright">&copy; 2024 HopeHands Foundation. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

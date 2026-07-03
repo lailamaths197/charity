@@ -1,0 +1,1040 @@
+/* Base Resets */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+body { background-color: #f9f9f9; color: #333; }
+
+/* Navbar styling */
+.navbar { background: #fff; border-bottom: 1px solid #ddd; padding: 15px 50px; position: sticky; top: 0; z-index: 1000; }
+.nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; }
+.logo { font-weight: bold; font-size: 1.2rem; }
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { text-decoration: none; color: #333; font-weight: bold; }
+.nav-links a.active { color: #000; font-weight: bold; }
+.btn-donate-nav { background: #0a3981; color: #fff; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: bold; }
+.btn-donate-nav:hover { background: #0d47a1; transition: background 0.3s ease; }
+/* Hero Section */
+.hero-section { color: white; padding: 100px 20px; text-align: center;
+background-image: url('../images/chimg1.png'); background-size: cover; background-position: center; position: relative;  }
+
+.hero-section:hover {
+    background-image: url('../images/chimg1.png');
+    filter: brightness(0.9);
+    transition: filter 0.3s ease;
+}
+.hero-buttons { margin-top: 25px; display: flex; justify-content: center; gap: 15px; }
+.btn-primary { background: #1a365d; color: white; padding: 12px 25px; border-radius: 4px; text-decoration: none; }
+.btn-primary:hover { background: #275d8c; transition: background 0.3s ease; }
+.btn-secondary { background: white; color: black; padding: 12px 25px; border-radius: 4px; text-decoration: none; }
+.btn-secondary:hover { background: #e2e8f0; transition: background 0.3s ease; }
+
+/* Dynamic Layout Containers */
+section { padding: 60px 50px; max-width: 1200px; margin: auto; text-align: center; }
+h2 { font-size: 2rem; margin-bottom: 30px; }
+.grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 30px; }
+
+/* Cards & Components */
+.card, .review-card, .impact-box {
+    background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); text-align: left;overflow: hidden;
+    border-radius: 8px;
+    }
+.card-img { height: 200px; width: 100%; background: #ddd; border-radius: 4px; margin-bottom: 15px; object-fit: cover; display: block; transition: transform 0.4s ease, filter 0.4s ease;}
+.card-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
+.card:hover .card-img {
+    transform: scale(1.06);
+    filter: brightness(1.05);
+}
+.btn-primary-blue { background: #1a365d; color: white; padding: 12px 35px; border-radius: 4px; text-decoration: none; margin-right: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+.btn-primary-blue:hover { background: #275d8c; }
+.btn-light{ background: #e2e8f0; color: black; padding: 12px 35px; border-radius: 4px; text-decoration: none; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+.btn-light:hover { background: #a0a2a3; }
+.center-buttons { margin-top: 20px; }
+.avatar-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Perfect circle */
+    object-fit: cover;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* Hover state: Lifts up and applies a shadow */
+.review-card:hover .avatar-img {
+    transform: translateY(-4px);
+    
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.2);
+}
+
+/* Impact Block Specifics */
+.impact-grid { display: flex; justify-content: space-between; gap: 20px; }
+.impact-box { flex: 1; text-align: left; background: #f7fafc; }
+.stat { font-size: 1.8rem; font-weight: bold; color: #2d3748; margin-top: 10px; }
+
+/* Footer Elements */
+.footer { background: #e2e8f0; padding: 40px 20px; text-align: center; margin-top: 50px; }
+.footer-links { display: flex; justify-content: center; gap: 40px; margin-bottom: 20px; }
+.footer-links a { text-decoration: none; color: #4a5568; }
+.footer-socials { margin-bottom: 15px; font-size: 1.2rem; word-spacing: 15px; }
+.copyright { font-size: 0.9rem; color: #718096; }
+.review-card .stars { font-size:x-large; margin: 5px 0; }
+.review-card .subreview { display: flex; flex-direction: row; align-items: center; gap: 15px; margin-bottom: 10px; }
+.review-card .subreview h4 { margin: 0; font-size: 1rem; }
+
+
+/*About Page*/
+/* Story Block Styling */
+.story-container {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+.sub-tag {
+    
+    font-weight: 700;
+    font-size:xx-large;
+    line-height: 3.5rem;
+}
+.story-text, .vision-text {
+    color: #555;
+    line-height: 1.7;
+    margin-top: 15px;
+}
+.story-illustration, .vision-illustration {
+    margin-top: 30px;
+    max-width: 1200px;
+    height: auto;
+}
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-12px); /* Moves up 12 pixels */
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+.responsive-vector {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    animation: floatAnimation 3s ease-in-out infinite; 
+}
+
+/* Our Values Card Components Grid */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.value-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px 20px;
+    text-align: left;
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* Our Team Member Elements Section */
+.team-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: #fdfdfd;
+}
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 35px;
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+.team-card {
+    background: transparent;
+    text-align: center;
+}
+.avatar-wrapper {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 15px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.team-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.team-card:hover .team-avatar {
+    transform: scale(1.1);
+}
+.team-role {
+    color: #777;
+    font-size: 14px;
+    margin-top: 5px;
+}
+/* Container box around the Bootstrap icon */
+.value-icon-placeholder {
+    font-size: 32px; /* Controls the size of the icon vector */
+   
+    margin-bottom: 12px;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Enhancing user interaction feedback on hover states */
+.value-card:hover .value-icon-placeholder {             
+    transform: scale(1.15) rotate(5deg); /* Slight scaling bounce effect */
+}
+
+
+/*Causes Page*/
+.causes-page-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+.causes-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.causes-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111;
+}
+.causes-header p {
+    color: #666;
+    font-size: 15px;
+    max-width: 750px;
+    margin: 15px auto 0;
+    line-height: 1.6;
+}
+.causes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.horizontal-cause-card {
+    display: flex;
+    background: #ffffff;
+    border: 1px solid #eef0f3;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.horizontal-cause-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+.cause-card-media {
+    flex: 1;
+    min-width: 40%;
+    max-width: 45%;
+}
+.cause-card-media img {
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    object-fit: cover;
+    display: block;
+}
+.cause-card-body {
+    flex: 1.2;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cause-card-body h2 {
+    font-size: 24px;
+    color: #111;
+    margin-bottom: 15px;
+}
+.cause-card-body p {
+    color: #555;
+    font-size: 14.5px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+.action-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+.btn-donate-cause {
+    background-color: #0d47a1;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 28px;
+    font-size: 14px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+.btn-donate-cause:hover {
+    background-color: #0a3981;
+}
+@media (max-width: 768px) {
+    .horizontal-cause-card {
+        flex-direction: column;
+    }
+    .cause-card-media {
+        max-width: 100%;
+    }
+    .action-wrapper {
+        justify-content: flex-start;
+    }
+}
+/* Donate Page */
+/* Notification message style banner box */
+.alert-success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    font-size: 14.5px;
+    text-align: center;
+}
+
+/* Explicit validation red notice block element labels */
+.field-error {
+    color: #dc3545;
+    font-size: 12.5px;
+    display: block;
+    margin-top: 5px;
+    text-align: left;
+    font-weight: 500;
+}
+
+/* Changes input frame lines when data is invalid */
+.input-group input:invalid:focus {
+    border-color: #dc3545;
+}
+/* Layout Wrapper Elements */
+.donate-page-container {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+.donate-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.donate-header h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 15px;
+}
+.donate-header p {
+    font-size: 14.5px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Form Styles */
+.donate-form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+.form-section {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.form-section legend {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 15px;
+}
+
+/* Text Fields Styling */
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14.5px;
+    background-color: #fff;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.input-group input:focus, .input-group select:focus {
+    border-color: #0d47a1;
+}
+
+/* Amount Buttons Layout Grid */
+.amount-buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 5px;
+}
+.btn-amount {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 12px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.btn-amount:hover {
+    border-color: #0d47a1;
+    color: #0d47a1;
+}
+.btn-amount.active {
+    background-color: #0d47a1;
+    border-color: #0d47a1;
+    color: #ffffff;
+}
+
+/* Action Center Controls */
+.submit-wrapper {
+    text-align: center;
+    margin-top: 10px;
+}
+.btn-submit-donate {
+    background-color: #0d47a1;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 14px 40px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: auto;
+    display: inline-block;
+}
+.btn-submit-donate:hover {
+    background-color: #0a3981;
+}
+.secure-notice {
+    font-size: 12px;
+    color: #666;
+    margin-top: 12px;
+}
+/* Card form fields wrapper spacing rules */
+.backend-payment-panel {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px;
+    padding: 25px 20px !important;
+}
+
+.backend-payment-panel legend {
+    color: #0d47a1 !important;
+    font-size: 16px !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Side by side splitting flex framework rules */
+.split-payment-inputs {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.split-payment-inputs .input-group {
+    flex: 1;
+}
+
+/* Inner card asset framework adjustments */
+.with-inner-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inner-icon {
+    position: absolute;
+    left: 14px;
+    color: #94a3b8;
+    font-size: 18px;
+}
+
+.with-inner-icon input {
+    padding-left: 44px !important;
+}
+/*Donate Success Page */
+/* Container Spacing Matrix */
+.success-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    text-align: center;
+}
+
+/* Success Hero Block */
+.success-hero h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111;
+    margin: 0px 10px;
+}
+
+.success-hero .subtitle {
+    font-size: 15px;
+    color: #666;
+}
+.success-vector {
+    max-width: 1200px;
+    width: 100%;
+    height: auto;
+    animation: continuousFloat 2s ease-in-out infinite; 
+}
+
+/* Impact Dynamic Section */
+.impact-breakdown-section {
+    margin: 10px 0;
+}
+.impact-lead {
+    color: #444;
+    font-size: 14.5px;
+    line-height: 1.7;
+    max-width: 850px;
+    margin: 15px auto 15px;
+}
+.impact-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.impact-card {
+    background: #ffffff;
+    border: 1px solid #eef1f6;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+.impact-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.impact-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.4s ease;
+}
+.impact-card:hover img {
+    transform: scale(1.03);
+}
+.impact-card h3 {
+    font-size: 16px;
+    color: #111;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.impact-card p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Actions Section */
+.further-actions-section {
+    margin: 40px 0;
+}
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+.btn-donate-again {
+    background: #28a745; /* Figma Green Button */
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.btn-share-cause {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.btn-share-cause:hover{
+    background-color: #0d47a1;
+    color: white;
+}
+@keyframes continuousFloat {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px); /* Lifts up 10 pixels smoothly */
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+.recurring-note {
+    font-size: 13px;
+    color: #666;
+    max-width: 600px;
+    margin: 10px auto;
+    line-height: 1.6;
+}
+
+/* Center wrapper for the checkbox block */
+.newsletter-checkbox-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    max-width: 450px;
+}
+
+/* Label styling to support clicking anywhere on the text alignment layout */
+.custom-checkbox-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 70px; /* Space between input checkbox box and your text description */
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 6px;
+    font-weight: 500;
+    user-select: none;
+    transition: color 0.2s ease;
+    box-shadow: 0 4px 16px rgb(0, 0, 0,0.2);
+    padding: 10px;
+    width:100%;
+}
+
+/* Make checkbox input slightly larger and apply your brand color accent scheme */
+.custom-checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #0d47a1; /* Uses your primary Figma brand blue color */
+    cursor: pointer;
+}
+
+/* Subtle feedback transition when hovering over the option text */
+.custom-checkbox-label:hover {
+    color: #0d47a1;
+}
+.volunteer-prompt {
+    margin-top: 10px;
+}
+.btn-volunteer-outline {
+    display:inline-block;
+    color: #000;
+    background-color: lab(96.14% 1.34 0.46);
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.btn-volunteer-outline:hover{
+    background-color: #0d47a1;
+    color: white;
+}
+.footer-blurb {
+    font-size: 14px;
+    color: #28a745;
+}
+
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+    .impact-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/*Contact page*/
+/* Core Page Canvas Constraints */
+.contact-page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.contact-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 40px;
+}
+
+/* Functional Row Layout for Action Badges */
+.contact-badges-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.info-badge-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+.info-badge {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 15px 26px;
+    border-radius: 8px;
+    font-size: 14.5px;
+    color: #334155;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.2s ease, box-shadow 0.25s ease;
+}
+
+.info-badge i {
+    color: #0d47a1; /* Figma Brand Dark Blue */
+    font-size: 18px;
+}
+
+/* Interactive Animations for Badges */
+.info-badge-link:hover .info-badge {
+    transform: translateY(-4px);
+    border-color: #0d47a1;
+    box-shadow: 0 10px 20px rgba(13, 71, 161, 0.08);
+}
+
+/* Map Graphics Container Layout Components */
+.map-link-container {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+}
+
+.map-section-wrapper {
+    position: relative;
+    width: 100%;
+    
+    max-height: 500px;
+    margin-bottom: 50px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.static-map-img {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.3s ease;
+}
+
+/* Map Interactive Hover State Overlays */
+.map-overlay-hint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.map-overlay-hint span {
+    background: #ffffff;
+    color: #0d47a1;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.map-link-container:hover .static-map-img {
+    transform: scale(1.02);
+    filter: brightness(0.9);
+}
+
+.map-link-container:hover .map-overlay-hint {
+    opacity: 1;
+}
+
+/* Lower Section Foundations */
+.support-trust-container h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 12px;
+}
+
+.support-trust-container p {
+    color: #556275;
+    font-size: 15px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+/* Trust Pill Items Flex Matrix Grid layout */
+.trust-tags-grid {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.trust-tag {
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid transparent;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+.trust-tag:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Specific Pill Color Overrides directly referencing original mock designs */
+.tag-green {
+    background-color: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #166534;
+}
+
+.tag-blue {
+    background-color: #eff6ff;
+    border-color: #bfdbfe;
+    color: #1e40af;
+}
+
+.tag-red {
+    background-color: #fff5f5;
+    border-color: #fed7d7;
+    color: #9b1c1c;
+}
+
+/* Responsive Fluid Geometry Rules */
+@media (max-width: 600px) {
+    .contact-badges-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .info-badge {
+        justify-content: center;
+    }
+    .trust-tags-grid {
+        flex-direction: column;
+    }
+}
+/*Volunteer Page*/
+/* Hero Spacing Matrix */
+.volunteer-hero {
+    width: 100vw;
+    position: relative;
+    
+   
+    min-height: 70vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../images/chimg21.png');
+    object-fit: cover;
+}
+.v-hero-overlay {
+    max-width: 900px;
+    padding: 0 20px;
+    text-align: center;
+}
+.v-hero-overlay h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.v-hero-overlay p {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 25px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+.btn-hero-join {
+    display: inline-block;
+    background-color: #0d47a1;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 35px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* Intro and Banner Layout */
+.intro-section-container {
+    max-width: 1100px;
+    margin: 60px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+.intro-section-container h2, .ways-help-container h2, .signup-section-wrapper h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 15px;
+}
+.intro-section-container p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+.intro-banner-box {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 1200px;
+}
+.v-group-img {
+    width: 100%;
+    height: 80vh;
+    display: block;
+}
+
+/* Ways You Can Help Matrix Row */
+.ways-help-container {
+    max-width: 1100px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+.ways-grid-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.way-badge {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 16px;
+    flex: 1;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.way-badge i {
+    font-size: 20px;
+}
+
+/* Individual Badge Accent Colors from Figma */
+.badge-edu i { color: #2563eb; }
+.badge-med i { color: #16a34a; }
+.badge-food i { color: #ea580c; }
+.badge-event i { color: #db2777; }
+.badge-remote i { color: #0284c7; }
+
+/* Signup Form Components */
+.signup-section-wrapper {
+    max-width: 650px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+.v-submission-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 35px;
+}
+.v-input-group input, .v-input-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14.5px;
+    box-sizing: border-box;
+    background-color: #f8fafc; /* Subtle light dashboard tint */
+    outline: none;
+}
+.v-input-group input:focus, .v-input-group select:focus {
+    border-color: #0d47a1;
+    background-color: #ffffff;
+}
+.v-field-error {
+    color: #dc3545;
+    font-size: 12px;
+    display: block;
+    text-align: left;
+    margin-top: 4px;
+}
+.btn-submit-volunteer {
+    background-color: #0d47a1;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 14px 45px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+}
+.privacy-blurb {
+    font-size: 12.5px;
+    color: #666;
+    margin-top: 12px;
+}

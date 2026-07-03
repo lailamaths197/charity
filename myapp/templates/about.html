@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us - HopeHands Foundation{% endblock %}
+
+{% block content %}
+<!-- Section 1: Our Story -->
+<section class="story-section">
+    <div class="story-container">
+        <span class="sub-tag">About us</span>
+        <h2>Our Story</h2>
+        <p class="story-text">
+            HopeHands Foundation was established in 2010 by Sarah Johnson and David Lee, two individuals driven by a shared vision of creating a world where every person has access to basic necessities and opportunities for a better life. Their journey began with a small community project, addressing immediate needs such as food and shelter for underprivileged families. Over the years, their dedication and the support of countless volunteers and donors have transformed HopeHands into a leading organization, impacting thousands of lives across various communities.
+        </p>
+        <div class="story-illustration">
+            <img src="{% static 'images/chimg9.png' %}" alt="Our Story Illustration" class="responsive-vector">
+        </div>
+    </div>
+</section>
+
+<!-- Section 2: Vision & Mission -->
+<section class="vision-section">
+    <div class="vision-container">
+        <h2>Vision & Mission</h2>
+        <p class="vision-text">
+            Our vision is to build a world where every individual has the opportunity to thrive, free from poverty and injustice. We strive to empower communities, ensuring access to essential resources and fostering sustainable development. Our mission is to mobilize resources, engage volunteers, and collaborate with partners to deliver impactful programs that address the root causes of poverty and inequality. We are committed to transparency, accountability, and the ethical use of all resources entrusted to us.
+        </p>
+    </div>
+</section>
+
+<!-- Section 3: Our Values -->
+<section class="values-section">
+    <h2>Our Values</h2>
+    <div class="values-grid">
+        {% for value in values %}
+        <div class="value-card">
+            <div class="value-icon-placeholder">
+                <i class="bi {{ value.icon }}"></i>
+            </div>
+            <h3>{{ value.title }}</h3>
+            <p>{{ value.desc }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Section 4: Our Team -->
+<section class="team-section">
+    <h2>Our Team</h2>
+    <div class="team-grid">
+        {% for member in team_members %}
+        <div class="team-card">
+            <div class="avatar-wrapper">
+                <img src="{% static member.image %}" alt="{{ member.name }}" class="team-avatar">
+            </div>
+            <h3>{{ member.name }}</h3>
+            <p class="team-role">{{ member.role }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Become a Volunteer - HopeHands Foundation{% endblock %}
+
+{% block content %}
+<!-- Section 1: Hero Banner -->
+<section class="volunteer-hero">
+    <div class="v-hero-overlay">
+        <h1>Be the Change. Become a Volunteer.</h1>
+        <p>Your time, skills, and compassion can turn today's chance to live into real support.</p>
+        <a href="#signup-form-anchor" class="btn-hero-join">Join as a Volunteer</a>
+    </div>
+</section>
+
+<!-- Section 2: Program Introduction -->
+<section class="intro-section-container">
+    <h2>Volunteer Program Introduction</h2>
+    <p>At HopeHands Foundation, volunteers are the heart of everything we do. Whether you have time, skills, or simply a kind heart, your contribution can help us reach more lives and create lasting impact.</p>
+    
+    <div class="intro-banner-box">
+        <img src="{% static 'images/chimg22.png' %}" alt="Our Volunteer Network Team" class="v-group-img">
+    </div>
+</section>
+
+<!-- Section 3: Ways You Can Help Matrix -->
+<section class="ways-help-container">
+    <h2>Ways You Can Help</h2>
+    <div class="ways-grid-row">
+        <div class="way-badge badge-edu">
+            <i class="bi bi-book-half"></i>
+            <span>Education Support</span>
+        </div>
+        <div class="way-badge badge-med">
+            <i class="bi bi-heart-pulse-fill"></i>
+            <span>Medical Assistance</span>
+        </div>
+        <div class="way-badge badge-food">
+            <i class="bi bi-basket-fill"></i>
+            <span>Food Distribution</span>
+        </div>
+        <div class="way-badge badge-event">
+            <i class="bi bi-calendar-event-fill"></i>
+            <span>Event Coordination</span>
+        </div>
+        <div class="way-badge badge-remote">
+            <i class="bi bi-laptop"></i>
+            <span>Online / Remote Volunteering</span>
+        </div>
+    </div>
+</section>
+
+<!-- Section 4: Application Form Component -->
+<section class="signup-section-wrapper" id="signup-form-anchor">
+    <h2>Join Our Volunteer Community</h2>
+    
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST" action="" class="v-submission-form" novalidate>
+        {% csrf_token %}
+        
+        <div class="v-input-group">
+            {{ form.full_name }}
+            {% if form.full_name.errors %}<span class="v-field-error">{{ form.full_name.errors.0 }}</span>{% endif %}
+        </div>
+        
+        <div class="v-input-group">
+            {{ form.email }}
+            {% if form.email.errors %}<span class="v-field-error">{{ form.email.errors.0 }}</span>{% endif %}
+        </div>
+        
+        <div class="v-input-group">
+            {{ form.phone_number }}
+            {% if form.phone_number.errors %}<span class="v-field-error">{{ form.phone_number.errors.0 }}</span>{% endif %}
+        </div>
+        
+        <div class="v-input-group">
+            {{ form.interest }}
+            {% if form.interest.errors %}<span class="v-field-error">{{ form.interest.errors.0 }}</span>{% endif %}
+        </div>
+        
+        <div class="v-input-group">
+            {{ form.availability }}
+            {% if form.availability.errors %}<span class="v-field-error">{{ form.availability.errors.0 }}</span>{% endif %}
+        </div>
+
+        <div class="v-action-center">
+            <button type="submit" class="btn-submit-volunteer">Become a Volunteer</button>
+            <p class="privacy-blurb">We respect your time and privacy. Our team will contact you soon.</p>
+        </div>
+    </form>
+</section>
+{% endblock %}

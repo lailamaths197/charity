@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us - HopeHands Foundation{% endblock %}
+
+{% block content %}
+<main class="contact-page-container">
+    
+    <!-- Top Header Component -->
+    <header class="contact-header">
+        <h1>Get in Touch With Us</h1>
+    </header>
+
+    <!-- Section 1: Fully Functional Quick-Action Info Badges -->
+    <section class="contact-badges-row">
+        
+        <!-- Mail Trigger: Launches user's local mailing clients -->
+        <a href="mailto:support@hopehands.org?subject=Inquiry%20to%20HopeHands%20Foundation" class="info-badge-link">
+            <div class="info-badge">
+                <i class="bi bi-envelope-fill"></i>
+                <span>support@hopehands.org</span>
+            </div>
+        </a>
+
+        <!-- Telephone Trigger: Direct smartphone dialing protocol -->
+        <a href="tel:+919876543210" class="info-badge-link">
+            <div class="info-badge">
+                <i class="bi bi-telephone-fill"></i>
+                <span>+91 98765 43210</span>
+            </div>
+        </a>
+
+        <!-- Map Navigation Link: Launches secure address coordinates on Google Maps -->
+        <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="info-badge-link">
+            <div class="info-badge">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span>Chennai, India</span>
+            </div>
+        </a>
+
+    </section>
+
+    <!-- Section 2: Map Static Illustration Area -->
+    <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="map-link-container" title="Click to view interactive map">
+        <section class="map-section-wrapper">
+            <img src="{% static 'images/chimg23.png' %}" alt="Our Location in Chennai, India" class="static-map-img">
+            <div class="map-overlay-hint">
+                <span><i class="bi bi-box-arrow-up-right"></i> Open interactive map</span>
+            </div>
+        </section>
+    </a>
+
+    <!-- Section 3: Bottom Support & Trust Badges Block -->
+    <section class="support-trust-container">
+        <h2>Support & Trust</h2>
+        <p>We believe in transparency, trust, and people-powered change. Every volunteer helps us move closer to a better future.</p>
+        
+        <div class="trust-tags-grid">
+            <div class="trust-tag tag-green">
+                <i class="bi bi-shield-check"></i> Trusted by Volunteers
+            </div>
+            <div class="trust-tag tag-blue">
+                <i class="bi bi-people-fill"></i> Community Support
+            </div>
+            <div class="trust-tag tag-red">
+                <i class="bi bi-heart-fill"></i> Making a Difference
+            </div>
+        </div>
+    </section>
+
+</main>
+{% endblock %}

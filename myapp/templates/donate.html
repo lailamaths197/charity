@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Donate - HopeHands Foundation{% endblock %}
+
+{% block content %}
+<main class="donate-page-container">
+    <header class="donate-header">
+        <h1>Make a Difference Today</h1>
+        <p>Your generous donation helps us transform vulnerable communities securely.</p>
+    </header>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST" action="" class="donate-form" novalidate>
+        {% csrf_token %}
+        
+        <!-- Section 1: Donor Information -->
+        <fieldset class="form-section">
+            <legend>Donor Information</legend>
+            <div class="input-group">
+                {{ form.name }}
+                {% if form.name.errors %}<span class="field-error">{{ form.name.errors.0 }}</span>{% endif %}
+            </div>
+            <div class="input-group">
+                {{ form.email }}
+                {% if form.email.errors %}<span class="field-error">{{ form.email.errors.0 }}</span>{% endif %}
+            </div>
+            <div class="input-group">
+                {{ form.address }}
+                {% if form.address.errors %}<span class="field-error">{{ form.address.errors.0 }}</span>{% endif %}
+            </div>
+        </fieldset>
+
+        <!-- Section 2: Amount Selection -->
+        <fieldset class="form-section">
+            <legend>Select Donation Amount</legend>
+            <div class="amount-buttons-grid">
+                <button type="button" class="btn-amount" data-value="200">₹200</button>
+                <button type="button" class="btn-amount" data-value="1000">₹1000</button>
+                <button type="button" class="btn-amount" data-value="2000">₹2000</button>
+                <button type="button" class="btn-amount" id="btn-custom">Custom</button>
+            </div>
+
+            <div class="input-group custom-amount-wrapper" id="custom-amount-box" style="display: none;">
+                {{ form.amount }}
+                {% if form.amount.errors %}<span class="field-error">{{ form.amount.errors.0 }}</span>{% endif %}
+            </div>
+
+            <div class="input-group dropdown-group">
+                {{ form.cause }}
+                {% if form.cause.errors %}<span class="field-error">{{ form.cause.errors.0 }}</span>{% endif %}
+            </div>
+        </fieldset>
+
+        <!-- Section 3: Secure Credit / Debit Payment Panel -->
+        <fieldset class="form-section backend-payment-panel">
+            <legend><i class="bi bi-shield-lock-fill"></i> Secure Card Details</legend>
+            
+            <div class="input-group full-width-field">
+                <div class="with-inner-icon">
+                    <i class="bi bi-credit-card inner-icon"></i>
+                    {{ form.card_number }}
+                </div>
+                {% if form.card_number.errors %}<span class="field-error">{{ form.card_number.errors.0 }}</span>{% endif %}
+            </div>
+
+            <div class="split-payment-inputs">
+                <div class="input-group">
+                    {{ form.card_expiry }}
+                    {% if form.card_expiry.errors %}<span class="field-error">{{ form.card_expiry.errors.0 }}</span>{% endif %}
+                </div>
+                <div class="input-group">
+                    {{ form.card_cvv }}
+                    {% if form.card_cvv.errors %}<span class="field-error">{{ form.card_cvv.errors.0 }}</span>{% endif %}
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="submit-wrapper">
+            <button type="submit" class="btn-submit-donate">Donate Securely</button>
+            <p class="secure-notice">Your donation is safe with us. We use secure payment processing.</p>
+        </div>
+    </form>
+</main>
+
+<script>
+    // Amount button selections logic
+    document.querySelectorAll('.btn-amount').forEach(button => {
+        button.addEventListener('click', function() {
+            document.querySelectorAll('.btn-amount').forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            const customBox = document.getElementById('custom-amount-box');
+            const amountInput = document.getElementById('donation-amount');
+
+            if (this.id === 'btn-custom') {
+                customBox.style.display = 'block';
+                amountInput.value = '';
+            } else {
+                customBox.style.display = 'none';
+                amountInput.value = this.getAttribute('data-value');
+            }
+        });
+    });
+
+    // Auto-formatting Card Spacing as user types
+    document.getElementById('cc-number').addEventListener('input', function (e) {
+        e.target.value = e.target.value.replace(/[^\d]/g, '').replace(/(.{4})/g, '$1 ').trim();
+    });
+
+    // Auto-formatting Expiry slash mask
+    document.getElementById('cc-expiry').addEventListener('input', function (e) {
+        let value = e.target.value.replace(/[^\d]/g, '');
+        if (value.length >= 2) {
+            e.target.value = value.slice(0, 2) + '/' + value.slice(2, 4);
+        } else {
+            e.target.value = value;
+        }
+    });
+</script>
+{% endblock %}

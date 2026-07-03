@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Our Causes - HopeHands Foundation{% endblock %}
+
+{% block content %}
+<main class="causes-page-container">
+    
+    <!-- Top Header Title Block -->
+    <header class="causes-header">
+        <h1>Our Causes</h1>
+        <p>Explore the various initiatives and projects we are dedicated to supporting. Your contribution can make a significant difference in the lives of those in need.</p>
+    </header>
+
+    <!-- Main List of Causes -->
+    <section class="causes-list">
+        
+        <!-- Cause Item 1: Healthcare for Children -->
+        <div class="horizontal-cause-card">
+            <div class="cause-card-media">
+                <!-- Points to your static folder -->
+                <img src="{% static 'images/chimg13.png' %}" alt="Healthcare for Children">
+            </div>
+            <div class="cause-card-body">
+                <h2>Healthcare for Children</h2>
+                <p>Many children lack access to basic healthcare, leading to preventable diseases and suffering. We aim to bridge this gap by providing comprehensive medical support. Your donation will help provide essential medical care, including surgeries, treatments, and rehabilitation to children suffering from critical illnesses.</p>
+                <div class="action-wrapper">
+                    <a href="/donate/" class="btn-donate-cause">Donate for this cause</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cause Item 2: Education for All -->
+        <div class="horizontal-cause-card">
+            <div class="cause-card-media">
+                <img src="{% static 'images/chimg14.png' %}" alt="Education for All">
+            </div>
+            <div class="cause-card-body">
+                <h2>Education for All</h2>
+                <p>Education is a fundamental right, yet many children are deprived of it due to poverty. We strive to provide quality education and resources to these children. Your support will fund educational programs, school supplies, and mentorship opportunities for underprivileged children, helping them achieve their full potential.</p>
+                <div class="action-wrapper">
+                    <a href="/donate/" class="btn-donate-cause">Donate for this cause</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cause Item 3: Poverty Relief -->
+        <div class="horizontal-cause-card">
+            <div class="cause-card-media">
+                <img src="{% static 'images/chimg15.png' %}" alt="Poverty Relief">
+            </div>
+            <div class="cause-card-body">
+                <h2>Poverty Relief</h2>
+                <p>Poverty affects millions, leading to hunger, homelessness, and lack of basic necessities. We work to alleviate poverty by providing essential resources and support. Your contribution will help us provide nutritious meals, clean water, and safe shelter to families struggling with poverty, ensuring their basic needs are met.</p>
+                <div class="action-wrapper">
+                    <a href="/donate/" class="btn-donate-cause">Donate for this cause</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cause Item 4: Environmental Sustainability -->
+        <div class="horizontal-cause-card">
+            <div class="cause-card-media">
+                <img src="{% static 'images/chimg16.png' %}" alt="Environmental Sustainability">
+            </div>
+            <div class="cause-card-body">
+                <h2>Environmental Sustainability</h2>
+                <p>Protecting our planet is crucial for future generations. We focus on environmental conservation and sustainability to ensure a healthy world for all. Your donation will support our efforts to protect the environment, promote sustainable practices, and raise awareness about climate change.</p>
+                <div class="action-wrapper">
+                    <a href="/donate/" class="btn-donate-cause">Donate for this cause</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
+{% endblock %}

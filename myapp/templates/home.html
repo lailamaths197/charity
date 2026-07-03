@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - HopeHands Foundation{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-overlay">
+        <h1>Together, We Can Change Lives</h1>
+        <p>Your kindness today can bring hope, health, and happiness to someone in need.</p>
+        <div class="hero-buttons">
+            <a href="/donate/" class="btn-primary">Donate Now</a>
+            <a href="/volunteer/" class="btn-secondary">Become a Volunteer</a>
+        </div>
+    </div>
+</section>
+
+<!-- Mission Section -->
+<section class="mission-section">
+    <h2>Our Mission</h2>
+    <p>At HopeHands Foundation, our mission is to empower communities and transform lives through compassionate action and sustainable solutions. We are dedicated to providing essential resources, fostering education, and promoting well-being for those facing adversity. Together, we strive to build a brighter future, one hand at a time.</p>
+</section>
+
+<!-- Causes Section -->
+<section class="causes-section">
+    <h2>Our Causes</h2>
+    <div class="grid-container">
+        <!-- Cause Item 1 -->
+        <div class="card">
+            <img src="{% static 'images/chimg2.png' %}" alt="Education for Children" class="card-img">
+            <h3>Education for Children</h3>
+            <p>Providing quality education and resources to underprivileged children, ensuring they have the opportunity to succeed.</p>
+        </div>
+        <!-- Cause Item 2 -->
+        <div class="card">
+            <img src="{% static 'images/chimg3.png' %}" alt="Medical Support" class="card-img">
+            <h3>Medical Support</h3>
+            <p>Offering medical assistance and healthcare support to those in need, ensuring access to essential medical services.</p>
+        </div>
+        <!-- Cause Item 3 -->
+        <div class="card">
+            <img src="{% static 'images/chimg4.png' %}" alt="Food & Shelter" class="card-img">
+            <h3>Food & Shelter</h3>
+            <p>Providing food, shelter, and basic necessities to individuals and families facing hardship and homelessness.</p>
+        </div>
+        <!-- Cause Item 4 -->
+        <div class="card">
+            <img src="{% static 'images/chimg5.png' %}" alt="Disaster Relief" class="card-img">
+            <h3>Disaster Relief</h3>
+            <p>Responding swiftly to natural disasters and providing immediate relief and long-term support to affected communities.</p>
+        </div>
+    </div>
+    <div class="center-buttons">
+        <a href="/donate/" class="btn-primary-blue">Donate</a>
+        <a href="/causes/" class="btn-light">Learn More</a>
+    </div>
+</section>
+
+<!-- Impact Section -->
+<section class="impact-section">
+    <h2>Impact Section</h2>
+    <div class="impact-grid">
+        <div class="impact-box"><h3>Lives Helped</h3><p class="stat">10,000+</p></div>
+        <div class="impact-box"><h3>Volunteers</h3><p class="stat">500+</p></div>
+        <div class="impact-box"><h3>Projects Completed</h3><p class="stat">120+</p></div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section">
+    <h2>Stories / Testimonials</h2>
+    <div class="grid-container">
+        <div class="review-card">
+            <div class="subreview">
+            <img src="{% static 'images/chimg6.png' %}" alt="Sophia Carter" class="avatar-img">
+            <div>
+            <h4>Sophia Carter</h4>
+            
+            <span class="date">2023-08-15</span>
+            </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p>"HopeHands Foundation has truly made a difference in my life..."</p>
+        </div>
+        <div class="review-card">
+            <div class="subreview">
+            <img src="{% static 'images/chimg7.png' %}" alt="Ethan Bennett" class="avatar-img">
+            <div>
+            <h4>Ethan Bennett</h4>
+            <span class="date">2023-07-22</span>
+            </div>
+            </div>
+
+            <div class="stars">★★★★★</div>
+            <p>"Volunteering with HopeHands has been an incredibly rewarding experience..."</p>
+        </div>
+        <div class="review-card">
+            <div class="subreview">
+            <img src="{% static 'images/chimg8.png' %}" alt="Olivia Hayes" class="avatar-img">
+            <div>
+            <h4>Olivia Hayes</h4>
+            
+            <span class="date">2023-06-10</span>
+            </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p>"The dedication and compassion of HopeHands Foundation are unmatched..."</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

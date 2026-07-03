@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Thank You - HopeHands Foundation{% endblock %}
+
+{% block content %}
+<main class="success-page-container">
+    
+    <!-- Hero Banner Illustration Section -->
+    <section class="success-hero">
+        <div class="illustration-box">
+            <img src="{% static 'images/chimg17.png' %}" alt="Thank you for making a difference" class="success-vector">
+        </div>
+        <h1>Thank You for Making a Difference ❤️</h1>
+        <p class="subtitle">Your kindness has brought hope, care, and support to those who need it the most.</p>
+    </section>
+
+    <!-- Impact Cards Section -->
+    <section class="impact-breakdown-section">
+        <h2>Your Impact</h2>
+        <p class="impact-lead">Dear {{ donor_name }}, your generous donation of ₹{{ amount }} will directly support our mission to provide essential resources and opportunities to underserved communities. It will help us deliver critical services, empower individuals, and foster sustainable change.</p>
+        
+        <div class="impact-cards-grid">
+            <div class="impact-card card-edu">
+                <img src="{% static 'images/chimg18.png' %}" alt="Education">
+                <h3>Educated a child for a month</h3>
+                <p>Your contribution ensures a child receives quality education for an entire month.</p>
+            </div>
+            
+            <div class="impact-card card-meals">
+                <img src="{% static 'images/chimg19.png' %}" alt="Meals">
+                <h3>Provided meals for families</h3>
+                <p>Your donation helps provide nutritious meals to families in need.</p>
+            </div>
+            
+            <div class="impact-card card-health">
+                <img src="{% static 'images/chimg20.png' %}" alt="Healthcare">
+                <h3>Supported basic healthcare</h3>
+                <p>Your support aids in delivering essential healthcare services to communities without access.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Actions & Engagement Section -->
+    <section class="further-actions-section">
+        <h2>Your Support Can Go Even Further</h2>
+        <div class="action-buttons">
+            <a href="/donate/" class="btn-donate-again">Donate Again</a>
+            <a href="/causes/" class="btn-share-cause">Share This Cause</a>
+        </div>
+        <p class="recurring-note">Consider making a recurring donation to ensure continuous support for our programs. Share our cause with your friends and family to help us reach more people.</p>
+    </section>
+
+    
+    <!-- Stay Connected Section -->
+    <section class="stay-connected-section">
+        <div class="newsletter-checkbox-wrapper">
+            <label class="custom-checkbox-label">
+                
+                <!-- Custom styling element descriptor text -->
+                <span class="checkbox-text">Receive email updates</span>
+                <!-- Checkbox Input -->
+                <input type="checkbox" name="receive_updates" id="newsletter-checkbox">
+            </label>
+        </div>
+        
+        <div class="volunteer-prompt">
+            <a href="/volunteer/" class="btn-volunteer-outline">Become a Volunteer</a>
+            <p class="footer-blurb">From all of us at Hope Hands Foundation - thank you for believing in humanity.</p>
+        </div>
+    </section>
+
+</main>
+{% endblock %}
